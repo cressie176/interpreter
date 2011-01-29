@@ -5,7 +5,7 @@
   </head>
   <body>
     <div>Think of a number: <input id="number" name="number" maxlength="9"/></div>
-    <div id="text"></div>
+    <div id="text" style="height: 2em"></div>
     <g:javascript>
 
         var interpret = function() {
@@ -25,7 +25,6 @@
                         $('#text').removeClass('message');                        
                         $('#text').addClass('errors');
                         $('#text').text(XMLHttpRequest.responseText);
-
                     }
                 });
             } else {
