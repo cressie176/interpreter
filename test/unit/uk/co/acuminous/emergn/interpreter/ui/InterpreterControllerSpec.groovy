@@ -40,9 +40,16 @@ class InterpreterControllerSpec extends ControllerSpec {
     def "Errors are handled gracefully"() {
 
         given:
+            String number = '123'
+
             NumericInterpreter numericInterpreter = Mock()
             controller.numericInterpreter = numericInterpreter
-            String number = '123'
+        
+            controller.metaClass.message = { Map messageArgs ->
+                assert messageArgs.code == 'badRequest'
+                assert messageArgs.args == [number]
+                return 'Failed'
+            }
 
         when:
             controller.params.number = number
@@ -51,7 +58,7 @@ class InterpreterControllerSpec extends ControllerSpec {
         then:
             1 * numericInterpreter.interpret(_) >> { throw new NumberFormatException() }
             controller.response.status == HttpServletResponse.SC_BAD_REQUEST
-            controller.response.contentAsString == "Failed to interpret: $number"
+            controller.response.contentAsString == "Failed"
             renderArgs.contentType == 'text/plain'
     }
 

@@ -33,7 +33,6 @@ class LocalisedRenderer implements Renderer {
         return !words.isEmpty()
     }
 
-
     private String resolve(String key) {
         return messageSource.getMessage(key, [] as Object[], locale)
     }

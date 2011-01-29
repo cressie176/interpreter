@@ -16,8 +16,8 @@ class InterpreterController {
         try {
             content = numericInterpreter.interpret(Integer.parseInt(params.number))
         } catch (Exception e) {
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST)
-            content = "Failed to interpret: ${params.number}"
+            content = message(code:'badRequest', args:[params.number])
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST)            
         }
         render(text: content, contentType: 'text/plain') // text/plain stops reverse proxy adding a doc type
     }
