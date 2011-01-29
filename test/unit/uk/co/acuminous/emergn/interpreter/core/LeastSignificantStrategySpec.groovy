@@ -21,8 +21,8 @@ class LeastSignificantStrategySpec extends Specification {
         then:
             1 * renderer.isDirty() >> false
             1 * renderer.append({ Partial p ->
-                p.value == 0
-                p.quantifier == null
+                p.value == 0 &&
+                p.quantifier == null &&
                 p.conjunction == false
             })
     }
@@ -53,8 +53,8 @@ class LeastSignificantStrategySpec extends Specification {
         then:
             1 * renderer.isDirty() >> false
             1 * renderer.append({ Partial p ->
-                p.value == 7
-                p.quantifier == null
+                p.value == 7 &&
+                p.quantifier == null &&
                 p.conjunction == false
             })
     }
@@ -71,8 +71,8 @@ class LeastSignificantStrategySpec extends Specification {
         then:
             1 * renderer.isDirty() >> true
             1 * renderer.append({ Partial p ->
-                p.value == 7
-                p.quantifier == null
+                p.value == 7 &&
+                p.quantifier == null &&
                 p.conjunction == true
             })
     }

@@ -33,8 +33,8 @@ class HundredsStrategySpec extends Specification {
 
         then:
             1 * renderer.append({ Partial p ->
-                p.value == 9
-                p.quantifier == hundredsOfMillions
+                p.value == 9 &&
+                p.quantifier == hundredsOfMillions &&
                 p.conjunction == false
             })
     }

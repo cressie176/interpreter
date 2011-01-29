@@ -73,7 +73,7 @@ class LocalisedRendererSpec extends Specification {
 
     }
 
-    def 'Renderer is clean when renderer has not been used'() {
+    def 'Renderer is clean when append has not been called'() {
 
         given:
             Renderer renderer = new LocalisedRenderer(locale: english, messageSource: messageSource)
@@ -95,7 +95,7 @@ class LocalisedRendererSpec extends Specification {
             renderer.isDirty() == false        
     }
 
-    def 'Renderer is dirty when renderer has been appended to'() {
+    def 'Renderer is dirty after first use'() {
 
         given:
             Renderer renderer = new LocalisedRenderer(locale: english, messageSource: messageSource)
