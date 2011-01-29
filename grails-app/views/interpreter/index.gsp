@@ -4,7 +4,7 @@
       <meta name="layout" content="main"></meta>
   </head>
   <body>
-    <div>Think of a number: <input id="number" name="number" maxlength="9"/></div>
+    <div><g:message code="prompt"/>: <input id="number" name="number" maxlength="9"/></div>
     <div id="text" style="height: 2em"></div>
     <g:javascript>
 
