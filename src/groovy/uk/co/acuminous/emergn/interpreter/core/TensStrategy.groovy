@@ -6,15 +6,16 @@ class TensStrategy extends BaseRenderingStrategy {
 
     void apply(Integer number) {
         value = quantifier.extract(number)
+        Integer relatedValue = relatedQuantifier.extract(number)
         
-        if (relatedQuantifier.extract(number) != 0 && value == 0) {
+        if (relatedValue != 0 && value == 0) {
             appendQuantifier()
         } else if (value == 0) {
             // Do nothing
-        } else if (renderer.isDirty()) {
-            appendValueQuantifierAndConjunction()
-        } else {
+        } else if (!renderer.isDirty() || relatedValue == 0) {
             appendValueAndQuantifier()
+        } else {
+            appendValueQuantifierAndConjunction()            
         }
     }
 }

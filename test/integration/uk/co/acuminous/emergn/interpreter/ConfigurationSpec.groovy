@@ -47,6 +47,7 @@ class ConfigurationSpec extends IntegrationSpec {
                100101 | 'one hundred thousand one hundred and one'
                101101 | 'one hundred and one thousand one hundred and one'
                111000 | 'one hundred and eleven thousand'
+              1001000 | 'one million one thousand'        
               8000000 | 'eight million'
               8888888 | 'eight million eight hundred and eighty eight thousand eight hundred and eighty eight'
              90000000 | 'ninety million'

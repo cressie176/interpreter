@@ -17,8 +17,8 @@ class TensStrategySpec extends Specification {
 
         then:
             1 * renderer.append({ Partial p ->
-                p.value == null
-                p.quantifier == tensOfMillions
+                p.value == null &&
+                p.quantifier == tensOfMillions &&
                 p.conjunction == false
             })
     }
@@ -28,31 +28,48 @@ class TensStrategySpec extends Specification {
         given:
             Renderer renderer = Mock()
             RenderingStrategy strategy = new TensStrategy(
-                    quantifier: tensOfMillions, relatedQuantifier: hundredsOfMillions, renderer: renderer)
+                    quantifier: tensOfThousands, relatedQuantifier: hundredsOfThousands, renderer: renderer)
 
         when:
-            strategy.apply(654321)
+            strategy.apply(987000321)
 
         then:
             0 * renderer.append(_)
     }
 
+    def "Otherwise number and quantifier are rendered when related hundreds is zero"() {
 
+        given:
+            Renderer renderer = Mock()
+            RenderingStrategy strategy = new TensStrategy(
+                    quantifier: tensOfThousands, relatedQuantifier: hundredsOfThousands, renderer: renderer)
+
+        when:
+            strategy.apply(987054321)
+
+        then:
+            1 * renderer.append({ Partial p ->
+                p.value == 54 &&
+                p.quantifier == tensOfThousands &&
+                p.conjunction == false
+            })
+    }
+    
     def "Otherwise number and quantifier are rendered when the renderer is unused"() {
 
         given:
             Renderer renderer = Mock()
             RenderingStrategy strategy = new TensStrategy(
-                    quantifier: tensOfMillions, relatedQuantifier: hundredsOfMillions, renderer: renderer)
+                    quantifier: tensOfThousands, relatedQuantifier: hundredsOfThousands, renderer: renderer)
 
         when:
-            strategy.apply(7654321)
+            strategy.apply(54321)
 
         then:
             1 * renderer.isDirty() >> false
             1 * renderer.append({ Partial p ->
-                p.value == 7
-                p.quantifier == tensOfMillions
+                p.value == 54 &&
+                p.quantifier == tensOfThousands &&
                 p.conjunction == false
             })
     }
@@ -62,16 +79,16 @@ class TensStrategySpec extends Specification {
         given:
             Renderer renderer = Mock()
             RenderingStrategy strategy = new TensStrategy(
-                    quantifier: tensOfMillions, relatedQuantifier: hundredsOfMillions, renderer: renderer)
+                    quantifier: tensOfThousands, relatedQuantifier: hundredsOfThousands, renderer: renderer)
 
         when:
-            strategy.apply(7654321)
+            strategy.apply(987654321)
 
         then:
             1 * renderer.isDirty() >> true
             1 * renderer.append({ Partial p ->
-                p.value == 7
-                p.quantifier == tensOfMillions
+                p.value == 54 &&
+                p.quantifier == tensOfThousands &&
                 p.conjunction == true
             })
     }
