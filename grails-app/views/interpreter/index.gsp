@@ -9,10 +9,7 @@
     <g:javascript>
 
         var interpret = function() {
-            $('#text').removeClass('message');
-            $('#text').removeClass('errors');
             $('#text').text('');
-
 
             var number = $('#number').val();
             if (number) {
@@ -20,17 +17,22 @@
                     url: "${createLink(action: 'interpret')}/" + number,
                     dataType: 'html',
                     success: function(text) {
-                        $('#text').addClass('message');
+                        $('#text').addClass('message');                        
+                        $('#text').removeClass('errors');
                         $('#text').text(text);
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrow) {
+                        $('#text').removeClass('message');                        
                         $('#text').addClass('errors');
                         $('#text').text(XMLHttpRequest.responseText);
 
                     }
                 });
+            } else {
+                $('#text').removeClass('message');
+                $('#text').removeClass('errors');
             }
-        };
+        }
 
         $("#number").keyup(function() {
             $(this).stopTime('interpret');
