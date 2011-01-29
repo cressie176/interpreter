@@ -1,4 +1,4 @@
-package uk.co.acuminous.emergn.interpreter
+package uk.co.acuminous.emergn.interpreter.core
 
 import grails.plugin.spock.IntegrationSpec
 import spock.lang.Unroll

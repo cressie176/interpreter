@@ -23,7 +23,7 @@ class HundredsStrategySpec extends Specification {
 
     }
 
-    def "Number and quantifier are rendered when quantifier value is non zero"() {
+    def "Number and quantifier are rendered when value is non zero"() {
         given:
             Renderer renderer = Mock()
             HundredsStrategy strategy = new HundredsStrategy(quantifier: hundredsOfMillions, renderer: renderer)

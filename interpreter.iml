@@ -29,6 +29,7 @@
       <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test/functional" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -49,11 +50,27 @@
           <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/tomcat/jasper-compiler-jdt/jars/jasper-compiler-jdt-5.5.15.jar!/" />
           <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/javax.mail/mail/jars/mail-1.4.jar!/" />
           <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.mortbay.jetty/jetty-naming/jars/jetty-naming-6.1.21.jar!/" />
+          <root url="file://$MODULE_DIR$/lib" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/com.google.guava/guava/jars/guava-r07.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.json/json/jars/json-20080701.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.seleniumhq.selenium/selenium-common/jars/selenium-common-2.0b1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.seleniumhq.selenium/selenium-remote-common/jars/selenium-remote-common-2.0b1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.seleniumhq.selenium/selenium-remote-client/jars/selenium-remote-client-2.0b1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.seleniumhq.selenium/selenium-firefox-driver/jars/selenium-firefox-driver-2.0b1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.codehaus.geb/geb-junit3/jars/geb-junit3-0.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.codehaus.geb/geb-easyb/jars/geb-easyb-0.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.codehaus.geb/geb-junit4/jars/geb-junit4-0.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.codehaus.geb/geb-core/jars/geb-core-0.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.codehaus.geb/geb-spock/jars/geb-spock-0.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.codehaus.geb/geb-grails/jars/geb-grails-0.5.1.jar!/" />
           <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.2.jar!/" />
           <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/junit/junit-dep/jars/junit-dep-4.8.2.jar!/" />
           <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.spockframework/spock-core/jars/spock-core-0.5-groovy-1.7.jar!/" />
           <root url="jar://$MODULE_DIR$/../../../.ivy2/cache/org.spockframework/spock-grails-support/jars/spock-grails-support-0.5-groovy-1.7.jar!/" />
-          <root url="file://$MODULE_DIR$/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
