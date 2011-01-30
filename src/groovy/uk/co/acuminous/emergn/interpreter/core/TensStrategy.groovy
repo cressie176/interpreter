@@ -3,10 +3,11 @@ package uk.co.acuminous.emergn.interpreter.core
 class TensStrategy extends BaseRenderingStrategy {
 
     Quantifier relatedQuantifier
+    Integer relatedValue
 
     void apply(Integer number) {
         value = quantifier.extract(number)
-        Integer relatedValue = relatedQuantifier.extract(number)
+        relatedValue = relatedQuantifier.extract(number)
         
         if (relatedValue != 0 && value == 0) {
             appendQuantifier()

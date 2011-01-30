@@ -7,13 +7,10 @@ class LeastSignificantStrategy extends BaseRenderingStrategy {
 
         if (value == 0 && renderer.isDirty()) {
             // Do nothing
-        } else if (value == 0) {
-            appendValue()
-        } else if (renderer.isDirty()) {
-            renderValueAndConjunction()
+        } else if (value != 0 && renderer.isDirty()) {
+            renderValueAndConjunction()            
         } else {
             appendValue()
-        }
-        
+        }        
     }
 }

@@ -9,5 +9,4 @@ class HundredsStrategy extends BaseRenderingStrategy {
             appendValueAndQuantifier()
         }
     }
-
 }
