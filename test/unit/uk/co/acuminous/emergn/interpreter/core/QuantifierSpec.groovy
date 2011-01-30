@@ -21,8 +21,6 @@ class QuantifierSpec extends Specification {
             tensOfThousands     | 54
             hundreds            | 3
             tens                | 21
-
-
     }
 
 }

@@ -6,7 +6,7 @@ class HundredsStrategy extends BaseRenderingStrategy {
         value = quantifier.extract(number);
         
         if (value != 0) {
-            renderer.append(new Partial(value: value, quantifier: quantifier))
+            appendValueAndQuantifier()
         }
     }
 
